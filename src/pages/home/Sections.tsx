@@ -56,7 +56,7 @@ export function Hero() {
         <div className="hero__visual">
           <img className="hero__photo" src="/assets/images/hero-visual.webp" alt="Aerial view of Silicon Valley at golden hour" />
           <div className="hero__badge">
-            <strong>98%</strong>
+            <strong>97%</strong>
             <span>On-time delivery</span>
           </div>
         </div>

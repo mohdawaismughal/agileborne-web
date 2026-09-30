@@ -1,0 +1,176 @@
+/* Agileborne brand system
+   Karahi Indigo #0F172A · Baltistan Sky #38BDF8 · Slate Grey #64748B
+   Karakoram White #F8FAFC · Karakoram Gold #C6A87D (CTAs & milestones only) */
+
+:root {
+  --indigo: #0f172a;
+  --sky: #38bdf8;
+  --slate: #64748b;
+  --white: #f8fafc;
+  --gold: #c6a87d;
+  --gold-hover: #b3946a;
+  --font-display: 'Clash Display', sans-serif;
+  --font-body: 'General Sans', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.25s, color 0.25s;
+}
+
+img {
+  display: block;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- Brand logo (swaps with theme) ---------- */
+.brand-logo {
+  width: auto;
+  display: block;
+}
+[data-theme='dark'] .brand-logo--light,
+[data-theme='light'] .brand-logo--dark {
+  display: none;
+}
+
+/* ---------- Back to top ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--indigo);
+  color: var(--white);
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+/* ---------- Site footer (shared by every page) ---------- */
+.site-footer {
+  background: var(--indigo);
+  padding: 64px 24px 0;
+}
+.site-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.site-footer__cta {
+  border-bottom: 1px solid rgba(248, 250, 252, 0.12);
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.site-footer__cta p {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--white);
+  max-width: 520px;
+}
+.site-footer__cta a {
+  border: 1px solid rgba(248, 250, 252, 0.3);
+  color: var(--white);
+  font-size: 14px;
+  padding: 11px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-footer__cta a:hover {
+  border-color: var(--sky);
+  color: var(--sky);
+}
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 24px;
+  padding: 44px 0;
+}
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.site-footer__heading {
+  font-size: 13px;
+  color: var(--white);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.site-footer__col span,
+.site-footer__col a,
+.site-footer__col p {
+  font-size: 13.5px;
+  color: #94a3b8;
+  text-decoration: none;
+}
+.site-footer__col a:hover {
+  color: var(--sky);
+}
+.site-footer__tagline {
+  line-height: 1.6;
+  max-width: 220px;
+}
+.site-footer__col .site-footer__note {
+  font-size: 11.5px;
+  color: var(--slate);
+  line-height: 1.6;
+  margin-top: 6px;
+}
+@media (max-width: 767px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+/* Legal pages collapse their layout at 900px, and the footer follows. */
+@media (max-width: 899px) {
+  .legal-page .site-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+.site-footer__copy {
+  border-top: 1px solid rgba(248, 250, 252, 0.12);
+  margin-top: 40px;
+  padding: 22px 0;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--slate);
+}

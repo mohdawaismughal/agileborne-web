@@ -1,0 +1,9 @@
+// Cloudflare Workers config: serves the static Vite build (dist/) as the site.
+// `name` must match the Worker/project name in the Cloudflare dashboard.
+{
+  "name": "agileborne-web",
+  "compatibility_date": "2026-09-30",
+  "assets": {
+    "directory": "./dist"
+  }
+}
